@@ -209,4 +209,4 @@ class Hello(Resource):
 api.add_resource(Hello, '/conversation/<text>')
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
