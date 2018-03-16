@@ -17,21 +17,22 @@ from autocorrect import spell
 
 
  
-# try:
-#     con = psycopg2.connect("host='localhost' dbname='elearBot' user='postgres' password='arunkr'")   
-#     cur = con.cursor()
-#     cur.execute("CREATE TABLE PMP(Id INTEGER PRIMARY KEY, Name VARCHAR(20), Price INT)")
-#     cur.execute("INSERT INTO PMP VALUES(1,'Project management', 1499)")
-#     con.commit()
-# except psycopg2.DatabaseError:
-#     if con:
-#         con.rollback()
+try:
+    con = psycopg2.connect("host='ec2-54-221-212-15.compute-1.amazonaws.com' dbname='da3f3b6bt2td18' user='sjyychpqdeswzr' password='2874ffb1370936382d310d5a36336ad134d2abd6997468b39a13b3f98ea641b5'")   
+    cur = con.cursor()
+    cur.execute("CREATE TABLE PMP(Id INTEGER PRIMARY KEY, Name VARCHAR(20), Price INT)")
+    cur.execute("INSERT INTO PMP VALUES(1,'Project management', 1499)")
+    cur.execute("INSERT INTO PMP VALUES(2,'Project Marketing', 2499)")
+    con.commit()
+except psycopg2.DatabaseError:
+    if con:
+        con.rollback()
  
-#     print('Error')
+    print('Error')
  
-# finally:   
-#     if con:
-#         con.close()
+finally:   
+    if con:
+        con.close()
 
 
 app = Flask(__name__)
