@@ -177,8 +177,11 @@ class Hello(Resource):
 
                         else :
                             # return response["output"]["text"][0]
-                            
-                            return wikipedia.summary(a, sentences=1) + "::" + "https://en.wikipedia.org/wiki/" + a
+                            b = ''
+                            for i in text.split(' '):
+                                b += spell(i) + ' '
+                            print(b)
+                            return wikipedia.summary(b, sentences=1) + "::" + "https://en.wikipedia.org/wiki/" + b
                         con.commit()
 
 

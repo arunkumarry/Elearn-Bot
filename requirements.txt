@@ -49,6 +49,7 @@ graphviz==0.8.2
 greenlet==0.4.13
 gTTS==1.2.2
 gTTS-token==1.1.1
+gunicorn==19.7.1
 h5py==2.7.1
 html5lib==0.9999999
 humanfriendly==4.8
