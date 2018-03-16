@@ -162,7 +162,6 @@ Twisted==17.9.0
 typing==3.6.4
 tzlocal==1.5.1
 ujson==1.35
-unity-lens-photos==1.0
 urllib3==1.22
 watson-developer-cloud==1.0.2
 wcwidth==0.1.7
