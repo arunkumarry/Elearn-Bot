@@ -42,7 +42,6 @@ Flask-Jsonpify==1.5.0
 Flask-RESTful==0.3.6
 ftfy==4.4.3
 funcsigs==0.4
-functools32==3.2.3.post2
 future==0.16.0
 futures==3.2.0
 general==0.0.3.dev9
