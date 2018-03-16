@@ -170,6 +170,5 @@ websocket-client==0.46.0
 Werkzeug==0.14.1
 wikipedia==1.4.0
 wrapt==1.10.5
-wxPython==3.0.2.0
 wxPython-common==3.0.2.0
 zope.interface==4.4.3
