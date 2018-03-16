@@ -10,9 +10,7 @@ import psycopg2
 from psycopg2.extensions import AsIs
 import wikipedia
 from autocorrect import spell
-import en_core_web_sm
 
-nlp = en_core_web_sm.load()
 
 
 # con = None
