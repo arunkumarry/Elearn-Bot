@@ -43,7 +43,6 @@ Flask-RESTful==0.3.6
 ftfy==4.4.3
 funcsigs==0.4
 future==0.16.0
-futures==3.2.0
 general==0.0.3.dev9
 gevent==1.2.2
 graphviz==0.8.2
