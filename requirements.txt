@@ -108,7 +108,6 @@ protobuf==3.5.1
 psycopg2==2.7.4
 psycopg2-binary==2.7.4
 pyasn1==0.4.2
-PyAudio==0.2.11
 pycparser==2.18
 pycrypto==2.6.1
 pycurl==7.43.0
