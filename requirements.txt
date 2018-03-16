@@ -118,7 +118,6 @@ pykwalify==1.6.0
 pyOpenSSL==17.5.0
 pyparsing==2.2.0
 pysolr==3.7.0
-python-apt==1.1.0b1
 python-crfsuite==0.9.5
 python-dateutil==2.6.1
 Python-EasyConfig==0.1.7
