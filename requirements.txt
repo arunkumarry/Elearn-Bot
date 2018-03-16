@@ -130,9 +130,6 @@ redis==2.10.6
 regex==2017.4.5
 requests==2.18.4
 Resource==0.2.1
-ruamel.ordereddict==0.4.13
-ruamel.yaml==0.15.35
-s3transfer==0.1.12
 scikit-learn==0.19.1
 scipy==1.0.0
 sh==1.11
