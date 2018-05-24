@@ -70,71 +70,71 @@ class Hello(Resource):
                         params = (
                             ('version', '2016-07-11'),
                         )
-                        con = psycopg2.connect("host='localhost' dbname='elearbot' user='postgres' password='password'")   
-                        cur = con.cursor()
+                        # con = psycopg2.connect("host='localhost' dbname='elearbot' user='postgres' password='password'")   
+                        # cur = con.cursor()
 
-                        cur.execute("SELECT name FROM Categories")
-                        cat = cur.fetchall()
-                        new_data_cat = (' '.join(w) for w in cat)
+                        # cur.execute("SELECT name FROM Categories")
+                        # cat = cur.fetchall()
+                        # new_data_cat = (' '.join(w) for w in cat)
 
-                        cur.execute("SELECT name FROM Agile")
-                        agile = cur.fetchall()
-                        new_data_agile = (' '.join(w) for w in agile)
+                        # cur.execute("SELECT name FROM Agile")
+                        # agile = cur.fetchall()
+                        # new_data_agile = (' '.join(w) for w in agile)
 
-                        cur.execute("SELECT name FROM PMP")
-                        pmp = cur.fetchall()
-                        new_data_pmp = (' '.join(w) for w in pmp)
+                        # cur.execute("SELECT name FROM PMP")
+                        # pmp = cur.fetchall()
+                        # new_data_pmp = (' '.join(w) for w in pmp)
 
-                        if response["intents"] :
+                        # if response["intents"] :
 
-                            if response["intents"][0]["intent"] == "price" :
-                                TABLE = response["entities"][0]["entity"]
+                        #     if response["intents"][0]["intent"] == "price" :
+                        #         TABLE = response["entities"][0]["entity"]
                             
-                                NAME = response["entities"][0]["value"]
-                                SQL1 = 'SELECT price FROM %s' %TABLE
-                                SQL2 = SQL1 + " " + "WHERE name = '%s'" %NAME
-                                print(SQL2)
+                        #         NAME = response["entities"][0]["value"]
+                        #         SQL1 = 'SELECT price FROM %s' %TABLE
+                        #         SQL2 = SQL1 + " " + "WHERE name = '%s'" %NAME
+                        #         print(SQL2)
 
-                                cur.execute(SQL2)
-                                agile_and_scrum = cur.fetchone()
-                                print(agile_and_scrum)
+                        #         cur.execute(SQL2)
+                        #         agile_and_scrum = cur.fetchone()
+                        #         print(agile_and_scrum)
                        
 
-                        print(response)
+                        # print(response)
 
-                        if response["intents"] :
+                        # if response["intents"] :
 
-                            if response["intents"][0]["intent"] == "show_me_courses" :
+                        #     if response["intents"][0]["intent"] == "show_me_courses" :
 
-                            # print(response)
-                                return response["output"]["text"][0] + ":" + '\n,'.join([str(x) for x in new_data_cat])
+                        #     # print(response)
+                        #         return response["output"]["text"][0] + ":" + '\n,'.join([str(x) for x in new_data_cat])
 
                         
 
-                            if response["intents"][0]["intent"] == "show_me_agile" :
+                        #     if response["intents"][0]["intent"] == "show_me_agile" :
 
-                                return response["output"]["text"][0] + '\n,'.join([str(x) for x in new_data_agile])
+                        #         return response["output"]["text"][0] + '\n,'.join([str(x) for x in new_data_agile])
 
-                            if response["intents"][0]["intent"] == "show_me_pmp" :
+                        #     if response["intents"][0]["intent"] == "show_me_pmp" :
 
-                                return response["output"]["text"][0] + '\n,'.join([str(x) for x in new_data_pmp])
+                        #         return response["output"]["text"][0] + '\n,'.join([str(x) for x in new_data_pmp])
 
-                            if response["intents"][0]["intent"] == "price" :
+                        #     if response["intents"][0]["intent"] == "price" :
 
-                                return response["output"]["text"][0] + '\n,'.join([str(x) for x in agile_and_scrum])
+                        #         return response["output"]["text"][0] + '\n,'.join([str(x) for x in agile_and_scrum])
 
-                            else :
-                                return response["output"]["text"][0]
+                        #     else :
+                        #         return response["output"]["text"][0]
 
-                        else :
+                        # else :
 
-                            a = ''
-                            for i in text.split(' '):
-                                a += spell(i) + ' '
+                        a = ''
+                        for i in text.split(' '):
+                            a += spell(i) + ' '
 
-                            print(a)                            # return response["output"]["text"][0]
-                            return wikipedia.summary(a, sentences=1) + "::" + "https://en.wikipedia.org/wiki/" + a
-                        con.commit()
+                        print(a)                            # return response["output"]["text"][0]
+                        return wikipedia.summary(a, sentences=1) + "::" + "https://en.wikipedia.org/wiki/" + a
+                        # con.commit()
 
           
 
