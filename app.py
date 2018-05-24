@@ -10,6 +10,31 @@ from psycopg2.extensions import AsIs
 import wikipedia
 from autocorrect import spell
 
+con = None
+
+
+ 
+try:
+    con = psycopg2.connect("host='localhost' dbname='elearbot' user='postgres' password='password'")   
+    cur = con.cursor()
+    cur.execute("CREATE TABLE PMP(Id INTEGER PRIMARY KEY, Name VARCHAR(20), Price INT)")
+    cur.execute("CREATE TABLE Agile(Id INTEGER PRIMARY KEY, Name VARCHAR(20), Price INT)")
+    cur.execute("CREATE TABLE Categories(Id INTEGER PRIMARY KEY, Name VARCHAR(20))")
+    cur.execute("INSERT INTO Agile VALUES(1,'Scrum Master', 1699)")
+    cur.execute("INSERT INTO Agile VALUES(2,'Agile', 2499)")
+    cur.execute("INSERT INTO PMP VALUES(1,'Project management', 1499)")
+    cur.execute("INSERT INTO Categories VALUES(1, 'Agile')")
+    cur.execute("INSERT INTO Categories VALUES(2, 'PMP')")
+except psycopg2.DatabaseError:
+    if con:
+        con.rollback()
+ 
+    print('Error')
+ 
+finally:   
+
+    if con:
+        con.close()
 
 app = Flask(__name__)
 
@@ -45,7 +70,7 @@ class Hello(Resource):
                         params = (
                             ('version', '2016-07-11'),
                         )
-                        con = psycopg2.connect("host='localhost' dbname='elearBot' user='postgres' password='arunkr'")   
+                        con = psycopg2.connect("host='localhost' dbname='elearbot' user='postgres' password='password'")   
                         cur = con.cursor()
 
                         cur.execute("SELECT name FROM Categories")
@@ -116,4 +141,4 @@ class Hello(Resource):
 api.add_resource(Hello, '/conversation/<text>')
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0",port=5001,debug=True)
